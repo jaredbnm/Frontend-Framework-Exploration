@@ -1,28 +1,28 @@
 <template>
   <div class="study-calendar">
-    <header class="cal-header">
-      <button class="nav" @click="prevMonth">‹</button>
-      <div class="title">{{ monthYear }}</div>
-      <button class="nav" @click="nextMonth">›</button>
-    </header>
+    <div class="calendar-main">
+      <header class="cal-header">
+        <button class="nav" @click="prevMonth">‹</button>
+        <div class="title">{{ monthYear }}</div>
+        <button class="nav" @click="nextMonth">›</button>
+      </header>
 
-    <div class="weekdays">
-      <div v-for="d in weekdays" :key="d" class="weekday">{{ d }}</div>
-    </div>
+      <div class="weekdays">
+        <div v-for="d in weekdays" :key="d" class="weekday">{{ d }}</div>
+      </div>
 
-    <div class="days-grid">
-      <button
-        v-for="day in days"
-        :key="day.dateKey"
-        class="day"
-        :class="{ today: day.isToday, other: !day.inMonth, selected: day.dateKey === selectedDate }
-        "
-        @click="selectDate(day.dateKey, day.date)
-        "
-      >
-        <div class="day-num">{{ day.date.getDate() }}</div>
-        <div class="dot" v-if="sessionsFor(day.dateKey).length"></div>
-      </button>
+      <div class="days-grid">
+        <button
+          v-for="day in days"
+          :key="day.dateKey"
+          class="day"
+          :class="{ today: day.isToday, other: !day.inMonth, selected: day.dateKey === selectedDate }"
+          @click="selectDate(day.dateKey, day.date)"
+        >
+          <div class="day-num">{{ day.date.getDate() }}</div>
+          <div class="dot" v-if="sessionsFor(day.dateKey).length"></div>
+        </button>
+      </div>
     </div>
 
     <section class="side">
