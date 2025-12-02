@@ -1,7 +1,8 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f9fafb;
+  background: linear-gradient(95deg, #6aea66 0%, #4b68a2 100%);
 }
 
 /* navbar styles */
@@ -46,7 +47,7 @@ body {
 }
 
 .hero {
-  background: linear-gradient(95deg, #6aea66 0%, #4b68a2 100%);
+  /*background: linear-gradient(95deg, #6aea66 0%, #4b68a2 100%);*/
   color: white;
   padding: 100px 20px;
   text-align: center;
@@ -120,9 +121,10 @@ body {
 }
 
 .features {
-  padding: 50px 20px;
+  padding: 25px 20px;
   background: #ffffff;
   text-align: center;
+  border-radius: 10px;
 }
 
 .features h2 {
@@ -167,4 +169,103 @@ body {
   color: #666;
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+/* pomodoro styles */
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.pomodoro {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.timer {
+  font-size: 3.25rem;
+  font-weight: 700;
+  margin: 18px 0;
+  color: #0f172a;
+}
+
+.progress {
+  height: 8px;
+  background: #eef2ff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6aea66, #4b68a2);
+  width: 0;
+}
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.pomodoro .btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.pomodoro .btn-primary {
+  background: #4b68a2;
+  color: white;
+  border-radius: 8px;
+}
+
+.quick-select {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.quick-select button {
+  background: transparent;
+  border: 1px solid #e6eefb;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.quick-select button.active {
+  background: #eef2ff;
+  border-color: #839fd6;
 }
